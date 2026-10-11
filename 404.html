@@ -4,13 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page not found – Studio Sedillo</title>
-  <link rel="icon" href="/logo.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="/style.css" />
+  <script>
+    // This page is shown for any missing path, so its links cannot be plain relative ones.
+    // On the own domain the site lives at "/", on github.io in the folder of the repository.
+    var ROOT = /\.github\.io$/.test(location.hostname) ? '/' + location.pathname.split('/')[1] + '/' : '/';
+    document.write('<base href="' + ROOT + '" />');
+  </script>
+  <link rel="icon" href="logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <main class="wrap">
   <h1>Page not found</h1>
-  <p class="lead">Pagina niet gevonden. <a href="/">studiosedillo.com</a></p>
+  <p class="lead">Pagina niet gevonden. <a href="./">Home</a></p>
 </main>
 </body>
 </html>
