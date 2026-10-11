@@ -34,3 +34,17 @@ Het adres van Studio Sedillo staat nergens op deze site en hoort ook nooit in de
 `~/.studio-sedillo/blocklist.txt` (buiten de repo). `python3 tests/no-private-data.py`
 controleert alle bestanden; met `--online` ook de gepubliceerde pagina's. Uitleg:
 `docs/bedrijf.md` in de repo `sudoku-kids`.
+
+## Pagina's per app
+
+Apps hebben (nog) geen eigen website. Hun privacyverklaring en de pagina over gegevens
+verwijderen staan hier, in een map per app:
+
+| Adres | Bestand |
+|---|---|
+| `studiosedillo.com/sudoku-kids/privacy` | `sudoku-kids/privacy.html` (5 talen) |
+| `studiosedillo.com/sudoku-kids/delete` | `sudoku-kids/delete.html` (5 talen) |
+
+De app linkt hierheen met `?lang=<taal van de app>`. Dit zijn ook de adressen voor Google
+Play (privacybeleid en gegevens verwijderen). De startpagina toont de spellen als
+"Binnenkort", zonder links. Test: `python3 tests/pages.py`.
