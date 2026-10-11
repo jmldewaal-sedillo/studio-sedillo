@@ -17,8 +17,8 @@ komt dezelfde lijst uit het geheim PRIVATE_BLOCKLIST.
 
 Bij een treffer: exitcode 1, met bestand en regelnummer. Het patroon zelf wordt nooit
 getoond (alleen het regelnummer in de lijst), zodat het ook niet in een log belandt.
-Zonder lijst: waarschuwing en exitcode 0. Dit bestand staat gelijk in de Sudoku-repo en
-in studio-sedillo; pas ze samen aan.
+Zonder lijst: waarschuwing en exitcode 0. Dit bestand staat gelijk in sudoku-kids,
+studio-sedillo, studio-sedillo-app-template en the-flush-factor; pas ze samen aan.
 """
 import os
 import pathlib
