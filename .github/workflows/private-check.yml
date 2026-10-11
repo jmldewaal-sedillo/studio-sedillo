@@ -1,0 +1,20 @@
+name: Controle op privégegevens
+
+# Vangnet: geen privégegevens (huisadres) op de site. De lijst komt uit het geheim
+# PRIVATE_BLOCKLIST; zonder geheim volgt alleen een waarschuwing.
+# Let op: GitHub Pages publiceert deze repo rechtstreeks vanaf main, dus deze controle
+# meldt een fout achteraf. De pre-commit hook (tools/install-hooks.sh) houdt het vooraf tegen.
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Controle op privégegevens
+        env:
+          PRIVATE_BLOCKLIST: ${{ secrets.PRIVATE_BLOCKLIST }}
+        run: python3 tests/no-private-data.py --ci

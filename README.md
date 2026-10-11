@@ -26,3 +26,11 @@ Kopieer een `<article class="app">` in `index.html`, zet het icoon in `apps/`, e
 spel toe aan de lijst in `privacy.html`. De volledige werkwijze voor een nieuwe app
 (subdomein, DNS, repo, testversie, assetlinks) staat in de Sudoku-repo:
 `docs/studio-sedillo.md`.
+
+## Privégegevens (adres) buiten de site houden
+
+Het adres van Studio Sedillo staat nergens op deze site en hoort ook nooit in deze repo.
+`tools/install-hooks.sh` zet een pre-commit hook aan die elke commit controleert tegen
+`~/.studio-sedillo/blocklist.txt` (buiten de repo). `python3 tests/no-private-data.py`
+controleert alle bestanden; met `--online` ook de gepubliceerde pagina's. Uitleg:
+`docs/bedrijf.md` in de repo `sudoku-kids`.
