@@ -78,6 +78,20 @@ def main():
             check(f'privacyverklaring van de site ({lang}): verantwoordelijke, Gmail, grondslag, Data Privacy Framework, links naar de pagina\'s van Sudoku Kids',
                   word in text and 'Gmail' in text and 'Data Privacy Framework' in text and '6' in text and
                   js('[...document.querySelectorAll("main a")].map(a => a.getAttribute("href")).filter(h => h.startsWith("sudoku-kids/")).join()') == 'sudoku-kids/privacy,sudoku-kids/delete')
+        for lang, facts in (('en', ['Studio Sedillo', 'Sole proprietorship (eenmanszaak)', '42122276', 'the Netherlands', MAIL]),
+                            ('nl', ['Studio Sedillo', 'Eenmanszaak', '42122276', 'Nederland', MAIL])):
+            page.goto(url + 'over?lang=' + lang)
+            check(f'/over ({lang}): bedrijfsgegevens (naam, rechtsvorm, KvK, land, e-mail), past op een telefoon',
+                  js('[...document.querySelectorAll(".facts dd")].map(d => d.textContent)') == facts and
+                  js('document.documentElement.scrollWidth <= innerWidth'), js('[...document.querySelectorAll(".facts dd")].map(d => d.textContent)'))
+            page.goto(url + 'credits?lang=' + lang)
+            check(f'/credits ({lang}): site, spellen en auteursrecht',
+                  js('document.querySelectorAll("main h2").length') == 3 and 'Studio Sedillo' in js('document.querySelector("main").textContent'))
+        for name in ('', 'over', 'privacy', 'credits'):
+            page.goto(url + name)
+            links = js('[...document.querySelectorAll(".foot-links a")].map(a => a.getAttribute("href"))')
+            want = {'./', 'over', 'privacy', 'credits'} - {name or './'}
+            check(f'footer van /{name}: links naar de andere pagina\'s ({", ".join(sorted(want))})', set(links) == want, links)
 
         print('Sudoku Kids: privacy en gegevens verwijderen')
         for name, sections, title in (('privacy', 12, 'Privacyverklaring'), ('delete', 5, 'Gegevens verwijderen')):

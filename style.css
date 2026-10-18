@@ -31,5 +31,11 @@ h3 { font-size: 19px; margin: 0 0 4px; }
 .points li { margin-bottom: 6px; }
 .updated { color: var(--soft); font-style: italic; margin-top: 0; }
 
+.facts { display: grid; grid-template-columns: minmax(0, max-content) minmax(0, 1fr); gap: 8px 20px; margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 18px; }
+.facts dt { color: var(--soft); }
+.facts dd { margin: 0; font-weight: 700; overflow-wrap: anywhere; }
+@media (max-width: 420px) { .facts { grid-template-columns: 1fr; gap: 0; } .facts dd { margin-bottom: 10px; } }
+
 footer { margin-top: 64px; padding: 22px 0 40px; border-top: 1px solid var(--line); color: var(--soft); font-size: 15px; }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 6px 20px; justify-content: space-between; }
+.foot-links { display: flex; flex-wrap: wrap; gap: 6px 18px; }

@@ -6,6 +6,7 @@ Vanilla HTML/CSS/JS, geen build-stap, geen externe bestanden, geen cookies.
 | | |
 |---|---|
 | Live | https://studiosedillo.com (na het instellen van DNS; tot dan https://jmldewaal-sedillo.github.io/studio-sedillo/) |
+| Domein en DNS | Zie de privé-repo `studio-sedillo-infra` (`Projecten/studio-sedillo-infra/`): register van alle subdomeinen en de stappen |
 | Hosting | GitHub Pages vanaf `main` |
 | Talen | Engels en Nederlands (`data-en` / `data-nl` op elk element, wissel in `site.js`) |
 
@@ -14,7 +15,9 @@ Vanilla HTML/CSS/JS, geen build-stap, geen externe bestanden, geen cookies.
 | Bestand | Wat |
 |---|---|
 | `index.html` | Spellen en contact |
+| `over.html` | Over Studio Sedillo en de bedrijfsgegevens (`/over`): naam, rechtsvorm, KvK, land, e-mail. **Nooit het adres** |
 | `privacy.html` | Algemene privacyverklaring (bereikbaar als `/privacy`) |
+| `credits.html` | Credits van de site en auteursrecht (`/credits`); credits per spel staan in het spel zelf |
 | `404.html` | Pagina niet gevonden |
 | `style.css`, `site.js`, `logo.svg` | Opmaak, taalwissel, logo |
 | `apps/` | Een icoon per spel |
