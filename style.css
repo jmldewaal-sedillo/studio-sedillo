@@ -1,17 +1,19 @@
-:root { --ink: #2B2140; --soft: #6A5F82; --bg: #FBF8F4; --card: #fff; --line: #E9E2F2; --accent: #D6336C; }
+:root { --ink: #2B2140; --soft: #6A5F82; --bg: #FBF8F4; --card: #fff; --line: #E9E2F2; --accent: #C2255C; }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 'Segoe UI', system-ui, -apple-system, Arial, sans-serif; }
 a { color: var(--accent); font-weight: 700; }
 a:focus-visible, button:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
 .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+.skip { position: absolute; left: 12px; top: -60px; z-index: 10; background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 10px; }
+.skip:focus { top: 12px; }
 
 header { padding: 20px 0 0; }
 .bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 800; font-size: 20px; }
 .brand img { width: 40px; height: 40px; display: block; }
 .langs { display: flex; gap: 6px; }
-.langs button { min-width: 48px; min-height: 44px; border: 2px solid var(--line); background: var(--card); color: var(--ink); border-radius: 999px; font: inherit; font-size: 15px; font-weight: 700; cursor: pointer; }
+.langs button { min-width: 48px; min-height: 44px; border: 2px solid var(--soft); background: var(--card); color: var(--ink); border-radius: 999px; font: inherit; font-size: 15px; font-weight: 700; cursor: pointer; }
 .langs button[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: #fff; }
 
 h1 { font-size: clamp(30px, 7vw, 44px); line-height: 1.15; margin: 48px 0 12px; letter-spacing: -0.5px; }

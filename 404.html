@@ -2,25 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page not found – Studio Sedillo</title>
-  <script>
-    // This page is shown for any missing path, so its links cannot be plain relative ones.
-    // On the own domain the site lives at "/", on github.io in the folder of the repository.
-    var ROOT = /\.github\.io$/.test(location.hostname) ? '/' + location.pathname.split('/')[1] + '/' : '/';
-    document.write('<base href="' + ROOT + '" />');
-  </script>
-  <link rel="icon" href="logo.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="style.css" />
+  <!-- Shown for any missing path, so every link starts at the root of studiosedillo.com
+       (github.io sends visitors on to the own domain). -->
+  <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-<main class="wrap">
+<a class="skip" href="#main">Skip to content</a>
+<header class="wrap">
+  <div class="bar">
+    <a class="brand" href="/"><img src="/logo.svg" alt="" width="40" height="40" />Studio Sedillo</a>
+  </div>
+</header>
+<main class="wrap" id="main">
   <h1>Page not found</h1>
-  <p class="lead">Pagina niet gevonden. <a href="./">Home</a></p>
+  <p class="lead"><span lang="nl">Pagina niet gevonden.</span> <a href="/">Home</a></p>
 </main>
 <footer>
   <div class="wrap">
-    <span>&copy; 2026 Studio Sedillo · KvK 42122276 · Nederland · <a href="mailto:studio.sedillo@gmail.com">studio.sedillo@gmail.com</a></span>
+    <span>&copy; 2026 Studio Sedillo · KvK 42122276 · <span lang="nl">Nederland</span> · <a href="mailto:studio.sedillo@gmail.com">studio.sedillo@gmail.com</a></span>
+    <nav class="foot-links">
+      <a href="/">Home</a>
+      <a href="/over">About</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/credits">Credits</a>
+    </nav>
   </div>
 </footer>
 </body>

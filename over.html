@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#2B2140" />
   <title data-title-en="About – Studio Sedillo" data-title-nl="Over ons – Studio Sedillo">About – Studio Sedillo</title>
@@ -9,6 +11,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<a class="skip" href="#main" data-en="Skip to content" data-nl="Naar de inhoud">Skip to content</a>
 <header class="wrap">
   <div class="bar">
     <a class="brand" href="./"><img src="logo.svg" alt="" width="40" height="40" />Studio Sedillo</a>
@@ -19,7 +22,7 @@
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="main">
   <h1 data-en="About Studio Sedillo" data-nl="Over Studio Sedillo">About Studio Sedillo</h1>
   <p class="lead" data-en="Studio Sedillo makes small, friendly games and apps, for children and for grown-ups."
      data-nl="Studio Sedillo maakt kleine, vriendelijke spellen en apps, voor kinderen en voor volwassenen.">Studio Sedillo makes small, friendly games and apps, for children and for grown-ups.</p>
@@ -27,11 +30,11 @@
   <h2 data-en="How we work" data-nl="Hoe we werken">How we work</h2>
   <ul class="points">
     <li data-en="No accounts, no tracking, no statistics. What a game saves stays on your own device."
-        data-nl="Geen accounts, geen tracking, geen statistieken. Wat een spel bewaart, blijft op je eigen toestel."></li>
+        data-nl="Geen accounts, geen tracking, geen statistieken. Wat een spel bewaart, blijft op je eigen toestel.">No accounts, no tracking, no statistics. What a game saves stays on your own device.</li>
     <li data-en="Games for children have no advertising and no purchases."
-        data-nl="Spellen voor kinderen hebben geen advertenties en geen aankopen."></li>
+        data-nl="Spellen voor kinderen hebben geen advertenties en geen aankopen.">Games for children have no advertising and no purchases.</li>
     <li data-en="Every game has its own privacy policy and a page that explains how to delete your data."
-        data-nl="Elk spel heeft een eigen privacyverklaring en een pagina die uitlegt hoe je je gegevens verwijdert."></li>
+        data-nl="Elk spel heeft een eigen privacyverklaring en een pagina die uitlegt hoe je je gegevens verwijdert.">Every game has its own privacy policy and a page that explains how to delete your data.</li>
   </ul>
 
   <h2 data-en="Company details" data-nl="Bedrijfsgegevens">Company details</h2>

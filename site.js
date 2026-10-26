@@ -1,5 +1,6 @@
 // Studio Sedillo – language switch (English / Nederlands). Elements carry both
-// texts as data-en / data-nl; the choice is remembered on this device only.
+// texts as data-en / data-nl. The choice is remembered on this device only, and only
+// after the visitor taps a language button (so nothing is stored without asking).
 (function () {
   'use strict';
   var LANGS = ['en', 'nl'];
@@ -12,15 +13,15 @@
     } catch (e) { /* storage blocked */ }
     return String(navigator.language || 'en').slice(0, 2).toLowerCase() === 'nl' ? 'nl' : 'en';
   }
-  function show(lang) {
+  function show(lang, remember) {
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-' + lang + ']').forEach(function (el) { el.innerHTML = el.getAttribute('data-' + lang); });
     document.querySelectorAll('[data-title-' + lang + ']').forEach(function (el) { document.title = el.getAttribute('data-title-' + lang); });
     document.querySelectorAll('.langs button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
-    try { localStorage.setItem('studioSedillo_lang', lang); } catch (e) { /* ignore */ }
+    if (remember) { try { localStorage.setItem('studioSedillo_lang', lang); } catch (e) { /* ignore */ } }
   }
   document.querySelectorAll('.langs button').forEach(function (b) {
-    b.addEventListener('click', function () { show(b.dataset.lang); });
+    b.addEventListener('click', function () { show(b.dataset.lang, true); });
   });
   show(start());
 })();

@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Studio Sedillo makes small, friendly games." />
   <meta name="theme-color" content="#2B2140" />
@@ -10,6 +12,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<a class="skip" href="#main" data-en="Skip to content" data-nl="Naar de inhoud">Skip to content</a>
 <header class="wrap">
   <div class="bar">
     <a class="brand" href="./"><img src="logo.svg" alt="" width="40" height="40" />Studio Sedillo</a>
@@ -20,7 +23,7 @@
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="main">
   <h1 data-en="Small, friendly games." data-nl="Kleine, vriendelijke spellen.">Small, friendly games.</h1>
 
   <h2 id="apps" data-en="Games" data-nl="Spellen">Games</h2>

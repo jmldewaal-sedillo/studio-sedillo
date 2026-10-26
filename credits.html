@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#2B2140" />
   <title data-title-en="Credits – Studio Sedillo" data-title-nl="Credits – Studio Sedillo">Credits – Studio Sedillo</title>
@@ -9,6 +11,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<a class="skip" href="#main" data-en="Skip to content" data-nl="Naar de inhoud">Skip to content</a>
 <header class="wrap">
   <div class="bar">
     <a class="brand" href="./"><img src="logo.svg" alt="" width="40" height="40" />Studio Sedillo</a>
@@ -19,7 +22,7 @@
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="main">
   <h1 data-en="Credits" data-nl="Credits">Credits</h1>
 
   <h2 data-en="This website" data-nl="Deze website">This website</h2>

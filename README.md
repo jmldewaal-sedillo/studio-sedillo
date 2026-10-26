@@ -51,3 +51,16 @@ verwijderen staan hier, in een map per app:
 De app linkt hierheen met `?lang=<taal van de app>`. Dit zijn ook de adressen voor Google
 Play (privacybeleid en gegevens verwijderen). De startpagina toont de spellen als
 "Binnenkort", zonder links. Test: `python3 tests/pages.py`.
+
+## Vaste regels en controles
+
+`python3 tests/vaste_controles.py` (naast `tests/pages.py`) bewaakt op elke pagina:
+
+- toegankelijkheid volgens WCAG 2.1 AA met axe-core, in EN en NL (axe komt uit
+  `../studio-sedillo-app-template/node_modules`; eenmalig `npm install` daar);
+- een strenge Content-Security-Policy in een `<meta>`-tag: **geen inline scripts, geen
+  `style=`-attributen, geen `onclick=`**; alles in `site.js` en `style.css`;
+- de Engelse tekst staat in de HTML zelf, zodat een pagina ook zonder JavaScript leesbaar is
+  (`data-en`/`data-nl` wisselen alleen);
+- de taal wordt pas onthouden na een klik op EN of NL;
+- een skiplink, en een 404-pagina met absolute links (`/style.css`, `/privacy`).
